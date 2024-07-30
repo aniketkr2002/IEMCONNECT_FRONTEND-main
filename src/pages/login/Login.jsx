@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+   const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!username || !password) {
@@ -14,29 +14,43 @@ function Login() {
       return;
     }
 
-    try {
-      const response = await fetch('student/login', {
+   // localStorage.setItem('isLoggedIn', false);
+    const response = await fetch('student/login', {
                                          method: "post",
                                          headers: {
-                                              "Content-Type": "application/json"
+                                              "Content-Type": "application/json",
+                                          
                                          },
                                          body: JSON.stringify({
                                          "userName" : username,
                                          "password" : password
                                          })
-                              })
-      console.log(response.data);
-    } catch (error) {
-      setError('Invalid username or password. Please try again.');
-    }
-  };
+                              });
+            if (response.status === 200) {
+              const data = await response.json();
+              console.log(data);
+             localStorage.setItem('isLoggedIn', true);
+             localStorage.setItem('username', data.username);
+             navigate('/home');
+            } else {
+                setError('Invalid username or password');
+            }       
+        };
+      useEffect(() => {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn) {
+            navigate('/home');
+        }
+       }, [navigate]);
+      
+    
 
   return (
     <div className="container-fluid">
       {/* Top bar with "Student Connect" text */}
       <div className="row bg-dark text-light py-2">
         <div className="col">
-          <h3 className="ml-3">Student Connect</h3>
+          <h3 className="ml-3">IEM Connect</h3>
         </div>
       </div>
 

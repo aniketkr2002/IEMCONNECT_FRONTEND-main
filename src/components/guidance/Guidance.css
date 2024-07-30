@@ -1,0 +1,28 @@
+.siror {
+    padding: 20px;
+    background-color: #cbc9a5;
+    height: 100vh;
+  }
+  
+  .tips-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .coding-tips,
+  .studying-tips {
+    width: 45%;
+  }
+  
+  h3 {
+    margin-top: 20px;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  

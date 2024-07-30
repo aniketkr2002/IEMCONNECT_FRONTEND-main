@@ -1,41 +1,42 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import './navbar.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavBar() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
-
+ 
   return (
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/home">IEM-CONNECT</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/senior">senior</a>
-          </li>
-           <li class="nav-item">
-             <a class="nav-link" href="/blog">blog</a>
-           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">about</a>
-          </li>
-        </ul>
+    <nav className="navbar">
+      <div className="nav-container">
+        <a className="nav-logo" href="/home">IEM CONNECT</a>
+        <div className="nav-icon" onClick={handleClick}>
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
+        <div className={click ? 'nav-menu active' : 'nav-menu'}>
+          <ul className="nav-menu-items">
+            <li className="nav-item">
+              <a className="nav-links" href="/contact">Contact</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-links" href="/senior">Senior</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-links" href="/blog">Blog</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-links" href="/about">About</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-links" href="/addProduct">Add Product</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-links" href="/myproduct">My Products</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   );
 }
 

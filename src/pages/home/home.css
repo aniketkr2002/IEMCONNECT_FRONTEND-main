@@ -2,3 +2,7 @@
     background-color: var(--main-color);
     overflow: hidden;
 }
+.pbg{
+    background-color: #cbc9a5 ;
+    height: 100vh;
+}

@@ -10,6 +10,8 @@ import Guidance from './components/guidance/Guidance';
 import ContactUs from './components/contactUs/contactUs';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min"
+import AddProduct from './pages/addProduct/AddProduct';
+import MyProduct from './pages/myproduct/MyProducts';
 
 function App() {
   return (
@@ -18,12 +20,14 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Login/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/senior" element={<Guidance />} /> 
           <Route path="/blog" element={<Blog/>} /> 
           <Route path="/about" element={<About/>} /> 
           <Route path="/contact" element={<ContactUs/>} /> 
+          <Route path="/addproduct" element={<AddProduct/>}/>
+          <Route path="/myproduct" element={<MyProduct/>}/>
         </Routes>
       </div>
     </Router>

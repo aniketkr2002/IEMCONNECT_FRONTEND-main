@@ -3,19 +3,17 @@ import { Container, Button } from 'react-bootstrap';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import NavBar from '../../components/navbar/Navbar';
-import './home.css';
-const HomePage = () => {
+import './myproduct.css';
+const MyProduct = () => {
     const [rowData, setRowData] = useState([]);
 
     useEffect(() => {
         fetchData();
     }, []);
-    
-
 
     const fetchData = async () => {
         try {
-            const response = await fetch('product');
+            const response = await fetch('product/get/user1');
             if (response.ok) {
                 const data = await response.json();
                 setRowData(data);
@@ -54,7 +52,7 @@ const HomePage = () => {
         <div>
         <NavBar/>
         
-        <Container className='pbg' fluid>
+        <Container className='mbg' fluid>
             
             <h2>Product List</h2>
             <div className="ag-theme-bootstrap" style={{ height: '400px', width: '100%' }}>
@@ -71,4 +69,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default MyProduct;

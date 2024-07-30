@@ -1,0 +1,31 @@
+
+.contact-container {
+    padding: 20px;
+    background-color: #cbc9a5;
+    height: 100vh;
+  }
+  
+  .contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 20px;
+    border-top: 2px solid black;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  p span {
+    font-weight: bold;
+  }
+  
