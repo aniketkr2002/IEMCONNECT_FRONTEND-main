@@ -13,7 +13,8 @@ function Guidance() {
         </p>
         <div className="tips-container">
           <div className="coding-tips">
-            <h3>Coding Tips:</h3>
+
+            <h3>Coding Tips-:</h3>
             <ul>
               <li><strong>Practice Regularly:</strong> Consistent practice is key to improving coding skills. Set aside dedicated time each day to work on coding projects or practice coding exercises.</li>
               <li><strong>Work on Projects:</strong> Building real-world projects can help reinforce your understanding of coding concepts and technologies. Start with small projects and gradually increase their complexity.</li>
